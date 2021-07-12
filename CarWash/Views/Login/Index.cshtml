@@ -1,0 +1,61 @@
+﻿
+@{ Layout = null; }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    @Styles.Render("~/Content/main")
+    @Styles.Render("~/Content/Admin")
+</head>
+<body style="height:100%!important; background-color: #0A2660;">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-sm-7 col-md-5 col-lg-4 my-auto">
+                <div class="card bg-white shadow">
+                    <div class="card-body">
+                        <h4 class="card-title text-center">Login</h4>
+                        <form class="row" method="post" action="/Login/Login" id="frm_login">
+                            <div class="col-lg-12">
+                                <div class="form-group position-relative">
+                                    <label>Correo <span class="text-danger">*</span></label>
+                                    <i data-feather="user" class="fea icon-sm icons"></i>
+                                    <input type="email" class="form-control" placeholder="Correo" name="txt_email" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group position-relative">
+                                    <label>Contraseña <span class="text-danger">*</span></label>
+                                    <i data-feather="key" class="fea icon-sm icons"></i>
+                                    <input type="password" class="form-control" placeholder="Contraseña" name="txt_clave" required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                @if (ViewBag.Error != null)
+                                {
+                                    switch ((int)ViewBag.Error)
+                                    {
+                                        case 1:
+                                            <div class="text-danger mb-3">@ViewBag.Mensaje</div>
+                                            break;
+
+                                    }
+                                }
+                            </div>
+                            <div class="col-lg-12 mb-0">
+                                <button class="btn btn-primary btn-block">Ingresar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/main")
+</body>
+</html>
+
+

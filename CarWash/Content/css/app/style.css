@@ -1,0 +1,156 @@
+﻿body {
+    background-color: white;
+    width: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+nav {
+    background-color: #fa7470;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+label.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 100px;
+}
+
+    nav ul li {
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 5;
+    }
+
+        nav ul li a {
+            color: white;
+            font-size: 20px;
+            padding: 7px 13px;
+            border-radius: 5px;
+        }
+
+a.active, a:hover {
+    background: #019fdc;
+    transition: .5s;
+}
+
+.landing {
+    background-color: #019fdc;
+    height: 1000px;
+    width: 100%;
+}
+
+.title_landing {
+    margin-top: 120px;
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.subtitle_landing {
+    font-size: 50px;
+    font-weight: normal;
+    padding-left: 100px;
+}
+
+.btn_landing {
+    background-color: #fa7470;
+    color: white;
+    margin-left: 150px;
+    height: 60px;
+    width: 300px;
+    font-size: 30px !important;
+    margin-top: 5px;
+}
+
+.image_landing {
+    margin-left: 280px;
+}
+
+.services {
+    background-color: #019fdc;
+    ;
+    height: 900px;
+}
+
+.services_prices {
+    color: #ffff00;
+}
+
+.services_image {
+    height: 150px;
+    margin-top: 160px;
+}
+
+.btn_services {
+    background-color: #fa7470;
+    color: white;
+    height: 60px;
+    width: 300px;
+    font-size: 30px !important;
+    margin-top: 10px;
+}
+
+.price {
+    color: white;
+    background-color: #fa7470;
+    border-radius: 20px;
+    font-size: 25px;
+    padding: 5px;
+}
+
+.modal_login {
+    background-color: #019fdced;
+}
+
+.login_image {
+    height: 100px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.title_login {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+input {
+    width: 350px !important;
+    height: 50px !important;
+    margin: auto !important;
+}
+
+.text_login {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.title_register {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 20px;
+}
+
+.register_image {
+    height: 150px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
