@@ -8,8 +8,8 @@
 @section Scripts{
     @Scripts.Render("~/Scripts/Client/Home")
  }
-<input type="hidden" id="hddregister" value="@ViewBag.register"/>
-<input type="hidden" id="hdderror" value="@ViewBag.error"/>
+<input type="hidden" id="hddregister" value="@Session["register"]"/>
+<input type="hidden" id="hdderror" value="@Session["error"]"/>
 <div class="modal fade"
      id="loginModal"
      tabindex="-1"
@@ -92,7 +92,7 @@
                 </div>
                 <div class="row mt-3 text-center">
                     <div class="col text-white">
-                        @using (Html.BeginForm("RegistroCliente", "Login", FormMethod.Post, new { autocomplete = "off" }))
+                        @using (Html.BeginForm("RegistroCliente", "Login", FormMethod.Post, new { autocomplete = "off" ,ID="frm_register"}))
                         {
                             <div class="form-group">
                                 <input type="email"

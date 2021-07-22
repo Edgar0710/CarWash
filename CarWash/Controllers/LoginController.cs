@@ -85,7 +85,7 @@ namespace CarWash.Controllers
                 Session["tipoUsuario"] = "Client";
                 return Redirect("~/Cliente/Index");
             }
-            ViewBag.error = "1";
+           Session["error"] = 1;
             return Redirect("~/Home/Index");
         }
         [HttpPost]
@@ -103,10 +103,10 @@ namespace CarWash.Controllers
 
             if (result.Code == HttpStatusCode.OK)
             {
-                ViewBag.register = "1";
+                Session["register"] = 1;
             }
             else { 
-                 ViewBag.register = "-1";
+                 Session["register"] = 2;
             }
             return Redirect("~/Home/Index");
         }
