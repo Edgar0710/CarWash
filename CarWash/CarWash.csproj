@@ -316,6 +316,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\admin\citas\citas-1.0.js" />
+    <Content Include="Scripts\app\Client\Home-1.0.js" />
     <Content Include="Scripts\app\global\main-1.0.js" />
     <Content Include="Scripts\app\utils\Mensaje-1.0.js" />
     <Content Include="Scripts\vendors\bootstrap\bootstrap-table-locale-all.min.js" />
@@ -488,11 +489,11 @@
     <Content Include="Scripts\vendors\jquery\jquery-3.4.1.slim.min.map" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Cliente\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

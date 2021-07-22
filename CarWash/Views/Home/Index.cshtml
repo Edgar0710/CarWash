@@ -5,6 +5,11 @@
 @section Styles{
    @Styles.Render("~/Content/Client") 
     }
+@section Scripts{
+    @Scripts.Render("~/Scripts/Client/Home")
+ }
+<input type="hidden" id="hddregister" value="@ViewBag.register"/>
+<input type="hidden" id="hdderror" value="@ViewBag.error"/>
 <div class="modal fade"
      id="loginModal"
      tabindex="-1"
@@ -26,31 +31,35 @@
                 </div>
                 <div class="row mt-3 text-center">
                     <div class="col text-white">
-                        <form>
+                        @using (Html.BeginForm("LoginCliente", "Login", FormMethod.Post, new { autocomplete = "off" }))
+                        {
                             <h4 class="pb-3 text-left ml-5">
-                                Ingresa a tu cuenta.</h4>
-                                <div class="form-group">
-                                    <input type="email"
-                                           class="form-control"
-                                           id="exampleInputEmail1"
-                                           aria-describedby="emailHelp"
-                                           placeholder="Correo electrónico" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="password"
-                                           class="form-control"
-                                           id="exampleInputPassword1"
-                                           placeholder="Contraseña" />
-                                </div>
-                                <h4 class="text_login">Ay no... ¿Aún no tienes una cuenta?</h4>
-                                <h4 class="text_login">
-                                    Obtén una cuenta  <a data-toggle="modal"
-                                                         data-target="#modalRegister"
-                                                         href="#modalRegister">aquí.</a>
-                                </h4>
-                                <button type="submit" class="btn text-center btn_services">Ingresar</button>
-                        </form>
-                    </div>
+                                Ingresa a tu cuenta.
+                            </h4>
+                            <div class="form-group">
+                                <input type="email"
+                                       class="form-control"
+                                       id="exampleInputEmail1"
+                                       name="email"
+                                       aria-describedby="emailHelp"
+                                       placeholder="Correo electrónico" />
+                            </div>
+                            <div class="form-group">
+                                <input type="password"
+                                       class="form-control"
+                                       name="password"
+                                       id="exampleInputPassword1"
+                                       placeholder="Contraseña" />
+                            </div>
+                            <h4 class="text_login">Ay no... ¿Aún no tienes una cuenta?</h4>
+                            <h4 class="text_login">
+                                Obtén una cuenta  <a data-toggle="modal"
+                                                     data-target="#modalRegister"
+                                                     href="#modalRegister">aquí.</a>
+                            </h4>
+                            <button type="submit" class="btn text-center btn_services">Ingresar</button>
+                        }
+                        </div>
                 </div>
             </div>
         </div>
@@ -83,24 +92,28 @@
                 </div>
                 <div class="row mt-3 text-center">
                     <div class="col text-white">
-                        <form>
+                        @using (Html.BeginForm("RegistroCliente", "Login", FormMethod.Post, new { autocomplete = "off" }))
+                        {
                             <div class="form-group">
                                 <input type="email"
                                        class="form-control"
-                                       id="exampleInputEmail1"
+                                       id="emailRegistro"
+                                       name="emailRegistro"
                                        aria-describedby="emailHelp"
                                        placeholder="Ingresa tu correo electrónico" />
                             </div>
                             <div class="form-group">
                                 <input type="password"
                                        class="form-control"
-                                       id="exampleInputPassword1"
+                                       id="passwordRegistro"
+                                       name="passwordRegistro"
                                        placeholder="Ingresa tu contraseña" />
                             </div>
                             <div class="form-group">
                                 <input type="password"
                                        class="form-control"
-                                       id="exampleInputPassword1"
+                                       id="passwordRegisterConfirmed"
+                                       name="passwordRegisterConfirmed"
                                        placeholder="Confirma tu contraseña" />
                             </div>
                             <h4 class="text_login">¿Qué haces cuenta? Tu ya tienes una cuenta.</h4>
@@ -110,8 +123,8 @@
                                                         href="#loginModal">aquí.</a>
                             </h4>
                             <button type="submit" class="btn text-center btn_services">Registrarse</button>
-                        </form>
-                    </div>
+                        }
+                        </div>
                 </div>
             </div>
         </div>
@@ -121,10 +134,13 @@
 <nav>
     <label class="logo"> The Car Wash </label>
     <ul>
-        <li><a href="/login/Index">Inicio</a></li>
+        <li><a href="~/Home">Inicio</a></li>
         <li><a href="#section2">Servicios</a></li>
         <li><a href="#">Ubicación</a></li>
         <li><a href="#">Contacto</a></li>
+        <li><a href="#" data-toggle="modal"
+                data-target="#loginModal">Login</a></li>
+
     </ul>
 </nav>
 <section id="section1" class="landing">
@@ -147,7 +163,7 @@
     </div>
 </section>
 <section id="section2" class="services">
-    <div class="row text-center services_~/Content/images">
+    <div class="row text-center services_image">
         <div class="col">
             <img src="~/Content/images/tire.png" class="services_image" />
         </div>

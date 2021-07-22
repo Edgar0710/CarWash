@@ -22,7 +22,8 @@ namespace CarWash
                         "~/Scripts/app/global/main-{version}.js"));
 
             bundles.Add(new StyleBundle("~/Content/main").Include(
-                      "~/Content/css/vendors/bootstrap/bootstrap.min.css", "~/Content/css/vendors/font-awesome/all.min.css"
+                      "~/Content/css/vendors/bootstrap/bootstrap.min.css", 
+                      "~/Content/css/vendors/font-awesome/all.min.css"
                      ));
             bundles.Add(new StyleBundle("~/Content/Admin").Include("~/Content/css/app/site.css"));
 
@@ -32,6 +33,8 @@ namespace CarWash
             bundles.Add(new ScriptBundle("~/Scripts/admin/citas").Include("~/Scripts/app/admin/citas/citas-{version}.js"));
             #endregion
             #region Cliente
+            bundles.Add(new ScriptBundle("~/Scripts/Client/Home")
+                .Include("~/Scripts/app/Client/Home-{version}.js"));
 
             #endregion
 

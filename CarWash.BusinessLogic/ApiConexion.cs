@@ -15,8 +15,8 @@ namespace CarWash.BusinessLogic
 {
     public static class ApiConexion
     {
-        const string strUrl = "https://localhost:44355/api/";
-        //const string strUrl = "https://renuevauto.com:8585/gec.api/api/";
+        // const string strUrl = "https://localhost:44355/api/";
+        const string strUrl = "https://3.140.176.65/carwash.api/api/";
         //const string strUrl = "https://renuevauto.com:8086/gec.api/api/";
 
 
