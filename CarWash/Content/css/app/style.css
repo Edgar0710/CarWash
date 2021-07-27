@@ -1,4 +1,15 @@
-﻿body {
+﻿:root {
+    --gray: #727276;
+    --bluelight: #E0EDFC;
+    --blue: #26316f;
+    --bluestrong: #005CB9;
+    --redlight: #FF1066;
+    --demiwhite: #fbfbfb;
+    --greenlemon: #95e852;
+    --yellow: #f2ba40;
+}
+
+body {
     background-color: white;
     width: 100%;
 }

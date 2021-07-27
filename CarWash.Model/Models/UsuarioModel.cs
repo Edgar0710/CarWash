@@ -9,7 +9,7 @@ namespace CarWash.Model.Models
     public class UsuarioModel
     {
 
-        public long us_id { get; set; }
+        public int us_id { get; set; }
 
 
         public string us_nombre { get; set; }

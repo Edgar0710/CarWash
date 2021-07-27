@@ -35,6 +35,8 @@ namespace CarWash
             #region Cliente
             bundles.Add(new ScriptBundle("~/Scripts/Client/Home")
                 .Include("~/Scripts/app/Client/Home-{version}.js"));
+            bundles.Add(new ScriptBundle("~/Scripts/Client/Index")
+                .Include("~/Scripts/app/Client/clientIndex-{version}.js"));
 
             #endregion
 

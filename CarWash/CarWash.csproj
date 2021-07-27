@@ -120,6 +120,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Api\ApiAreaRegistration.cs" />
+    <Compile Include="Areas\Api\Controllers\ServicesController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -140,6 +142,7 @@
     <Content Include="Content\css\vendors\bootstrap\bootstrap-table.min.css" />
     <Content Include="Content\css\vendors\bootstrap\bootstrap.css" />
     <Content Include="Content\css\vendors\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\css\vendors\bs-stepper\bs-stepper.min.css" />
     <Content Include="Content\css\vendors\font-awesome\all.min.css" />
     <Content Include="Content\css\vendors\jquery\images\ui-icons_444444_256x240.png" />
     <Content Include="Content\css\vendors\jquery\images\ui-icons_555555_256x240.png" />
@@ -168,6 +171,7 @@
     <Content Include="Content\vendors\bootstrap\bootstrap.min.js" />
     <Content Include="Content\vendors\bootstrap\popper-utils.min.js" />
     <Content Include="Content\vendors\bootstrap\popper.min.js" />
+    <Content Include="Areas\Api\Views\web.config" />
     <None Include="Content\vendors\jquery\jquery-3.4.1.intellisense.js" />
     <Content Include="Content\vendors\jquery\jquery-3.4.1.js" />
     <Content Include="Content\vendors\jquery\jquery-3.4.1.min.js" />
@@ -316,6 +320,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\admin\citas\citas-1.0.js" />
+    <Content Include="Scripts\app\Client\clientIndex-1.0.js" />
     <Content Include="Scripts\app\Client\Home-1.0.js" />
     <Content Include="Scripts\app\global\main-1.0.js" />
     <Content Include="Scripts\app\utils\Mensaje-1.0.js" />
@@ -326,6 +331,7 @@
     <Content Include="Scripts\vendors\bootstrap\popper-utils.min.js" />
     <Content Include="Scripts\vendors\bootstrap\popper.min.js" />
     <None Include="Scripts\vendors\jquery\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\vendors\bs-stepper\bs-stepper.min.js" />
     <Content Include="Scripts\vendors\jquery\jquery-3.4.1.js" />
     <Content Include="Scripts\vendors\jquery\jquery-3.4.1.min.js" />
     <Content Include="Scripts\vendors\jquery\jquery-3.4.1.slim.js" />
@@ -493,7 +499,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Api\Data\" />
+    <Folder Include="Areas\Api\Views\Services\" />
+    <Folder Include="Areas\Api\Views\Shared\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
