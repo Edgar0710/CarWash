@@ -27,16 +27,19 @@ namespace CarWash
                      ));
             bundles.Add(new StyleBundle("~/Content/Admin").Include("~/Content/css/app/site.css"));
 
-            bundles.Add(new StyleBundle("~/Content/Client").Include("~/Content/css/app/style.css"));
+            bundles.Add(new StyleBundle("~/Content/Client").Include("~/Content/css/vendors/bs-stepper/bs-stepper.min.css","~/Content/css/app/style.css"));
             #endregion
             #region Admin
             bundles.Add(new ScriptBundle("~/Scripts/admin/citas").Include("~/Scripts/app/admin/citas/citas-{version}.js"));
+            bundles.Add(new ScriptBundle("~/Scripts/admin/productos").Include("~/Scripts/app/admin/productos/productos-{version}.js"));
             #endregion
             #region Cliente
             bundles.Add(new ScriptBundle("~/Scripts/Client/Home")
-                .Include("~/Scripts/app/Client/Home-{version}.js"));
+                .Include(
+                "~/Scripts/app/Client/Home-{version}.js"));
+
             bundles.Add(new ScriptBundle("~/Scripts/Client/Index")
-                .Include("~/Scripts/app/Client/clientIndex-{version}.js"));
+                .Include("~/Scripts/vendors/bs-stepper/bs-stepper.min.js", "~/Scripts/app/Client/clientIndex-{version}.js"));
 
             #endregion
 

@@ -24,7 +24,6 @@ body {
 }
 
 nav {
-    background-color: #fa7470;
     height: 80px;
     width: 100%;
     position: fixed;
@@ -164,4 +163,122 @@ input {
     height: 150px;
     margin-top: 30px;
     margin-bottom: 15px;
+}
+/******Check box images******/
+.chk-container>ul {
+    list-style-type: none;
+}
+
+.chk-container li {
+    display: inline-block;
+}
+
+.chk-container input[type="checkbox"][id^="cb"] {
+    display: none;
+}
+
+.chk-container label {
+    border: 1px solid var(--bluestrong);
+    padding: 10px;
+    display: block;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    .chk-container label::before {
+        background-color: white;
+        color: white;
+        content: " ";
+        display: block;
+        border-radius: 50%;
+        border: 1px solid grey;
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 28px;
+        transition-duration: 0.4s;
+        transform: scale(0);
+    }
+
+    .chk-container label> img {
+        height: 100px;
+        width: 100px;
+        transition-duration: 0.2s;
+        transform-origin: 50% 50%;
+    }
+
+.chk-container :checked + label {
+    border-color: #ddd;
+}
+
+    .chk-container :checked + label::before {
+        content: "✓";
+        background-color: grey;
+        transform: scale(1);
+    }
+
+    .chk-container :checked + label img {
+        transform: scale(0.9);
+        box-shadow: 0 0 5px #333;
+        z-index: -1;
+    }
+/****************************/
+
+
+.card-cita {
+    position: relative;
+}
+
+.opt-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.tag-cita {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-right: 25px solid transparent;
+    border-top: 23px solid white;
+    border-left: 23px solid white;
+    border-bottom: 25px solid transparent;
+    border-radius: 3px;
+}
+
+.tag-cita-active {
+    border-top-color: var(--greenlemon);
+    border-left-color: var(--greenlemon);
+}
+
+.tag-cita-checked {
+    border-top-color: var(--bluestrong);
+    border-left-color: var(--bluestrong);
+}
+
+.tag-cita-unchecked {
+    border-top-color: var(--redlight);
+    border-left-color: var(--redlight);
+}
+
+.f-cita-active {
+    color: var(--greenlemon);
+}
+
+.f-cita-checked {
+    color: var(--bluestrong);
+}
+
+.f-cita-unchecked {
+    color: var(--redlight);
 }

@@ -6,7 +6,7 @@
     @Styles.Render("~/Content/Admin")
 }
 @section Scripts{
-    @Scripts.Render("~/Scripts/admin/citas")
+    @Scripts.Render("~/Scripts/admin/productos")
 }
 <!--Pasar esto a  un layout-->
 
@@ -103,41 +103,123 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 text-center mt-3">
-            <h2>Citas Programadas</h2>
+            <h2>Servicios</h2>
         </div>
     </div>
 
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mdlAddProduct">
+            Crear producto
+        </button>
+    </div>
 
-
-    <div class="row">
+    <div class="row mt-2">
         <div class="col-12">
-            
-                <table class="table table-sm table-reports" id="tb_citas">
-                    <thead>
-                        <tr>
-                            <th scope="col">Tipo de Auto</th>
-                            <th scope="col">Email Propietario</th>
-                            <th scope="col">Fecha</th>
-                            <th scope="col">Servicio</th>
-                            <th scope="col">Aprobado</th>
-                            <th scope="col">Pagado</th>
-                            <th scope="col">Total pago</th>
-                            <th scope="col">Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody class="table-hover">
-                        <tr>
-                            <td colspan="8" align="center">No se encontraron resultados</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+
+            <table class="table table-sm table-reports" id="tb_productos">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Opciones</th>
+
+                    </tr>
+                </thead>
+                <tbody class="table-hover">
+                    <tr>
+                        <td colspan="4" align="center">No se encontraron resultados</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
 
-  
+<!-- The Modal -->
+<div class="modal" id="mdlAddProduct">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Crear Servicio</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form id="frmCreate">
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="se_nombre">Nombre</label>
+                        <input type="text" class="form-control" id="se_nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="se_precio">Precio</label>
+                        <input type="number" class="form-control" id="se_precio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="se_descripcion">Descripcion</label>
+                        <input type="text" class="form-control" id="se_descripcion" required>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                    <button type="submit" class="btn btn-primary add-services">Crear</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 
+
+
+<!-- The Modal -->
+<div class="modal" id="mdlupdateProduct">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Actualizar Servicio</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form id="frmUpdate">
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                    <input type="hidden" id="se_id" />
+                    <div class="form-group">
+                        <label for="se_nombrea">Nombre</label>
+                        <input type="text" class="form-control" id="se_nombrea" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="se_precioa">Precio</label>
+                        <input type="number" class="form-control" id="se_precioa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="se_descripciona">Descripcion</label>
+                        <input type="text" class="form-control" id="se_descripciona" required>
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                    <button type="submit" class="btn btn-primary update-services">Acutalizar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 
 

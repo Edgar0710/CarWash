@@ -3,17 +3,12 @@
     ViewBag.Title = "Index";
 }
 @section Styles{
-    <link rel="stylesheet" href="~/Content/css/vendors/bs-stepper/bs-stepper.min.css"/>
+
     @Styles.Render("~/Content/Client")
 }
 @section Scripts{
-    <script src="~/Scripts/vendors/bs-stepper/bs-stepper.min.js"></script>
+
     @Scripts.Render("~/Scripts/Client/Index")
-<script>
-    $(document).ready(function () {
-        var stepper = new Stepper($('.bs-stepper')[0])
-    });
-</script>
 }
 <!--Pasar esto a  un layout-->
 
@@ -26,7 +21,7 @@
         <div class="spinner-grow spinner-grow-sm text-light my-auto"></div>
     </div>
 </div>
-<nav class="navbar navbar-expand-md navbar-dark bg-bluestrong text-white">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark  text-white">
     <a class="navbar-brand" href="#">CarWash</a>
     <div class="d-flex d-md-none">
         <!--Alerts-->
@@ -53,7 +48,7 @@
             <a class="btn dropdown-toggle our-navbar-text-commented min-w-auto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="far fa-user " aria-hidden="true"></i></a>
             <div class="dropdown-menu dropdown-menu-right position-absolute ddl-menu">
                 <label class="dropdown-item cl-gray md-text font-weight-bold border-bottom"></label>
-                <a class="dropdown-item cl-gray" href="~/Login/Logout"><i class="fa fa-arrow-alt-circle-left"></i> Salir</a>
+                <a class="dropdown-item cl-gray" href="~/Home"><i class="fa fa-arrow-alt-circle-left"></i> Salir</a>
             </div>
         </div>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,76 +94,7 @@
         </div>
     </div>
 </nav>
-<!------------------------------------------------- Modals ---------------------------------------------->
-<!-- The Modal -->
-<div class="modal" id="mdlAddAuto">
-    <div class="modal-dialog modal-lg  modal-dialog-centered">
-        <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Añadir Cita</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                <!----------------------------------------------------------------------------->
-                <div id="stepper1" class="bs-stepper linear">
-                    <div class="bs-stepper-header" role="tablist">
-                        <div class="step" data-target="#test-l-1">
-                            <button type="button" class="step-trigger" role="tab" id="stepper1trigger1" aria-controls="test-l-1" aria-selected="false" disabled="disabled">
-                                <span class="bs-stepper-circle">1</span>
-                                <span class="bs-stepper-label">Email</span>
-                            </button>
-                        </div>
-                        <div class="bs-stepper-line"></div>
-                        <div class="step" data-target="#test-l-2">
-                            <button type="button" class="step-trigger" role="tab" id="stepper1trigger2" aria-controls="test-l-2" aria-selected="false" disabled="disabled">
-                                <span class="bs-stepper-circle">2</span>
-                                <span class="bs-stepper-label">Password</span>
-                            </button>
-                        </div>
-                        <div class="bs-stepper-line"></div>
-                        <div class="step active" data-target="#test-l-3">
-                            <button type="button" class="step-trigger" role="tab" id="stepper1trigger3" aria-controls="test-l-3" aria-selected="true">
-                                <span class="bs-stepper-circle">3</span>
-                                <span class="bs-stepper-label">Validate</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="bs-stepper-content">
-                        <form onsubmit="return false">
-                            <div id="test-l-1" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger1">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                </div>
-                                <button class="btn btn-primary" onclick="stepper1.next()">Next</button>
-                            </div>
-                            <div id="test-l-2" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger2">
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                </div>
-                                <button class="btn btn-primary" onclick="stepper1.previous()">Previous</button>
-                                <button class="btn btn-primary" onclick="stepper1.next()">Next</button>
-                            </div>
-                            <div id="test-l-3" role="tabpanel" class="bs-stepper-pane text-center active dstepper-block" aria-labelledby="stepper1trigger3">
-                                <button class="btn btn-primary mt-5" onclick="stepper1.previous()">Previous</button>
-                                <button type="submit" class="btn btn-primary mt-5">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!----------------------------------------------------------------------------->
-            </div>
-
-
-        </div>
-    </div>
-</div>
-<!------------------------------------------------- End Modals ------------------------------------------>
 <!-----------------------------------------     Content     --------------------------------------------->
 <div class="container mt-4">
     <ul class="nav nav-tabs">
@@ -182,14 +108,149 @@
     <div class="tab-content">
         <div class="tab-pane container active" id="citas">
             <div class="d-flex justify-content-end mt-4">
-                <button class="btn btn-primary mx-2" data-toggle="modal" data-target="#mdlAddAuto">Añadir citas</button>
-                @*<button class="btn btn-info mx-2">Añadir Auto</button>*@
+                <button class="btn btn-primary mx-2 show-add-citas">Añadir citas</button>
+                <button class="btn btn-success mx-2 show-add-autos">Añadir Autos</button>
             </div>
-            <div class="d-flex justify-content-between">
-                <h3 class="text-center mt-3">No hay Citas disponibles</h3>
+            <div class="d-flex justify-content-between flex-column flex-md-row">
+                <span class="fw-700">Aprobadas <i class="fa fa-square f-cita-active"></i></span>
+                <span class="fw-700">Sin aprobar <i class="fa fa-square f-cita-unchecked"></i></span>
+               
+            </div>
+            <div class="content-citas row row-cols-1 row-cols-md-2 row-cols-lg-3 no-gutters citas-container">
+
             </div>
         </div>
     </div>
 </div>
 
 <!-------------------------------------------------------------------------------------->
+<!------------------------------------------------- Modals ---------------------------------------------->
+<!-- The Modal -->
+<div class="modal" id="mdlAddAuto">
+    <div class="modal-dialog modal-lg  modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title title-auto">Añadir Auto</h4>
+                <h4 class="modal-title title-cita d-none">Añadir Cita</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <!---------------------------------- Crear auto  -------------------------------------------->
+                <div class="container-fluid add-car chk-container add-auto ">
+                    <h2 class="text-center">Elige tu tipo de auto</h2>
+                    <ul>
+                        <li>
+                            <input type="checkbox" class="tipo-auto" id="cb1" value="4X4"/>
+                            <label class="font-weight-bold text-center" for="cb1">4x4<br /><img src="~/Content/images/carrocerias/4x4.jpg" width="80" height="80" /></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="tipo-auto" id="cb2" value="Deportivo"/>
+                            <label class="font-weight-bold text-center" for="cb2">Deportivo<br /><img src="~/Content/images/carrocerias/deportivo.jpg" width="80" height="80" /></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="tipo-auto" id="cb3" value="Hatch Back" />
+                            <label class="font-weight-bold text-center" for="cb3">Hatch Back<br /><img src="~/Content/images/carrocerias/hatch-back.jpg" width="80" height="80" /></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="tipo-auto" id="cb4" value="Minivan" />
+                            <label class="font-weight-bold text-center" for="cb4">Minivan<br /><img src="~/Content/images/carrocerias/minivan.jpg" width="80" height="80" /></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="tipo-auto" id="cb5" value="Pick Up"/>
+                            <label class="font-weight-bold text-center" for="cb5">Pick Up <br /><img src="~/Content/images/carrocerias/pick-up.jpg" width="80" height="80" /></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="tipo-auto" id="cb6" value="Sedan" />
+                            <label class="font-weight-bold text-center" for="cb6">Sedan<br /><img src="~/Content/images/carrocerias/sedan.jpg" width="80" height="80" /></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="tipo-auto" id="cb7" value="SUV" />
+
+                            <label class="font-weight-bold text-center" for="cb7">
+                                SUV<br /><img src="~/Content/images/carrocerias/suv.jpg" width="80" height="80" />
+
+                            </label>
+                        </li>
+                    </ul>
+                    <div class="container-fluid justify-content-between">
+                        <button class="btn btn-primary show-add-citas">Añadir Cita</button>
+                        <button class="btn btn-success inset-auto">Crear  Auto</button>
+                        
+                    </div>
+                </div>
+                <!---------------------------------- Fin Crear auto-------------------------------------------->
+                <!----------------------------------Crear Cita ------------------------------------------->
+                <div class="container-fluid add-cita d-none">
+                    <div id="stepper1" class="bs-stepper linear">
+                        <div class="bs-stepper-header" role="tablist">
+                            <div class="step" data-target="#test-l-1">
+                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger1" aria-controls="test-l-1" aria-selected="false" disabled="disabled">
+                                    <span class="bs-stepper-circle">1</span>
+                                    <span class="bs-stepper-label">Auto</span>
+                                </button>
+                            </div>
+                            <div class="bs-stepper-line"></div>
+                            <div class="step" data-target="#test-l-2">
+                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger2" aria-controls="test-l-2" aria-selected="false" disabled="disabled">
+                                    <span class="bs-stepper-circle">2</span>
+                                    <span class="bs-stepper-label">Servicio</span>
+                                </button>
+                            </div>
+                            <div class="bs-stepper-line"></div>
+                            <div class="step active" data-target="#test-l-3">
+                                <button type="button" class="step-trigger" role="tab" id="stepper1trigger3" aria-controls="test-l-3" aria-selected="true">
+                                    <span class="bs-stepper-circle">3</span>
+                                    <span class="bs-stepper-label">Fecha y Hora</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bs-stepper-content">
+                            <form onsubmit="return false"  id="frmCitas">
+                                <div id="test-l-1" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger1">
+                                    <div class="form-group">
+                                        <label for="ddlAutos">Seleccion Tu auto</label>
+                                       <select class="form-control" name="ddlAutos" id="ddlAutos" required>
+                                           <option>--Selecciona una opción--</option>
+                                       </select>
+                                    </div>
+                                    <button class="btn btn-primary btn-next">Siguiente</button>
+                                </div>
+                                <div id="test-l-2" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger2">
+                                    <div class="form-group">
+                                        <label for="ddlServicios">Selecciona un Servicio</label>
+                                        <select class="form-control" name="ddlServicios" id="ddlServicios" required>
+                                            <option>--Selecciona una opción--</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-primary btn-previous">Previous</button>
+                                    <button class="btn btn-primary btn-next">Siguiente</button>
+                                </div>
+                                <div id="test-l-3" role="tabpanel" class="bs-stepper-pane text-center active dstepper-block" aria-labelledby="stepper1trigger3">
+                                    <div class="form-group">
+                                        <label for="txtFecha"> Selecciona la fecha</label>
+                                      <input class="form-control" id="txtFecha" type="date" required/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtHora">Selecciona la hora</label>
+                                       <input class="form-control"  id="txtHora" type="time" required/>
+                                    </div>
+                                    <button class="btn btn-primary mt-5 btn-previous">Anterior</button>
+                                    <button type="submit" class="btn btn-primary mt-5 btn-createCitas">Enviar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!----------------------------------------------------------------------------->
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!------------------------------------------------- End Modals ------------------------------------------>

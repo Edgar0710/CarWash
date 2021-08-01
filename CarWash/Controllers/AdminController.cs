@@ -17,6 +17,10 @@ namespace CarWash.Controllers
         {
             return View();
         }
+        public ActionResult Productos()
+        {
+            return View();
+        }
         #region get
         /*   [HttpGet]
            public JsonResult GetEstadosCuenta(string datefin, string dateinit, int grupo, int sucursal, int pagenumber, int pagesize, string qry, int nivel)

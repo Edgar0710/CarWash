@@ -156,6 +156,13 @@
     <Content Include="Content\fonts\materialdesignicons-webfont.svg" />
     <Content Include="Content\fonts\Poppins\OFL.txt" />
     <Content Include="Content\images\car-wash.png" />
+    <Content Include="Content\images\carrocerias\4x4.jpg" />
+    <Content Include="Content\images\carrocerias\deportivo.jpg" />
+    <Content Include="Content\images\carrocerias\hatch-back.jpg" />
+    <Content Include="Content\images\carrocerias\minivan.jpg" />
+    <Content Include="Content\images\carrocerias\pick-up.jpg" />
+    <Content Include="Content\images\carrocerias\sedan.jpg" />
+    <Content Include="Content\images\carrocerias\suv.jpg" />
     <Content Include="Content\images\hand-washing.png" />
     <Content Include="Content\images\Icons\sort_asc.png" />
     <Content Include="Content\images\Icons\sort_asc_disabled.png" />
@@ -320,6 +327,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\admin\citas\citas-1.0.js" />
+    <Content Include="Scripts\app\admin\productos\productos-1.0.js" />
     <Content Include="Scripts\app\Client\clientIndex-1.0.js" />
     <Content Include="Scripts\app\Client\Home-1.0.js" />
     <Content Include="Scripts\app\global\main-1.0.js" />
@@ -496,6 +504,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Admin\Productos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
