@@ -6,7 +6,12 @@ var HomeClient = {
         HomeClient.CheckMessagesAlert();
     },
     AddEvents: () => {
-
+        $("#modalRegister").on('show.bs.modal', function () {
+            $("#loginModal").modal('hide');
+        });
+        $("#loginModal").on('show.bs.modal', function () {
+            $("#modalRegister").modal('hide');
+        });
     },
     Validate: () => {
         $("#frm_register").validate({
