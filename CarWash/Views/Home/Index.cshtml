@@ -1,15 +1,15 @@
 ﻿@{
     ViewBag.Title = "Login";
-    
+
 }
 @section Styles{
-   @Styles.Render("~/Content/Client") 
-    }
+    @Styles.Render("~/Content/Client")
+}
 @section Scripts{
     @Scripts.Render("~/Scripts/Client/Home")
- }
-<input type="hidden" id="hddregister" value="@Session["register"]"/>
-<input type="hidden" id="hdderror" value="@Session["error"]"/>
+}
+<input type="hidden" id="hddregister" value="@Session["register"]" />
+<input type="hidden" id="hdderror" value="@Session["error"]" />
 <div class="modal fade"
      id="loginModal"
      tabindex="-1"
@@ -19,23 +19,14 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body modal_login">
-                <div class="row">
-                    <div class="col-4">
-                        <img src="~/Content/images/car-wash.png" class="login_image" />
-                    </div>
-                    <div class="col-8 text-center">
-                        <h4 class="text-white title_login">
-                            ¿Listo para un auto limpio y reluciente?
-                        </h4>
-                    </div>
-                </div>
+               
                 <div class="row mt-3 text-center">
                     <div class="col text-white">
                         @using (Html.BeginForm("LoginCliente", "Login", FormMethod.Post, new { autocomplete = "off" }))
                         {
-                            <h4 class="pb-3 text-left ml-5">
+                            <h5 class="pb-3  text-center">
                                 Ingresa a tu cuenta.
-                            </h4>
+                            </h5>
                             <div class="form-group">
                                 <input type="email"
                                        class="form-control"
@@ -57,9 +48,9 @@
                                                      data-target="#modalRegister"
                                                      href="#modalRegister">aquí.</a>
                             </h4>
-                            <button type="submit" class="btn text-center btn_services">Ingresar</button>
+                            <button type="submit" class="btn text-center btn_cita">Ingresar</button>
                         }
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,23 +67,17 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body modal_login">
-                <div class="row">
-                    <div class="col text-center">
-                        <img src="~/Content/images/car-wash.png" class="register_image" />
-                    </div>
+                               <div class="row">
 
-                </div>
-                <div class="row">
-
-                    <div class="col text-center">
+                    <div class="col-12 text-center">
                         <h4 class="text-white title_register">
-                            Crea una cuenta y jamás tendrás tu auto sucio otra vez
+                            Crea una cuenta y jamás tendrás un auto sucio otra vez
                         </h4>
                     </div>
                 </div>
                 <div class="row mt-3 text-center">
                     <div class="col text-white">
-                        @using (Html.BeginForm("RegistroCliente", "Login", FormMethod.Post, new { autocomplete = "off" ,ID="frm_register"}))
+                        @using (Html.BeginForm("RegistroCliente", "Login", FormMethod.Post, new { autocomplete = "off", ID = "frm_register" }))
                         {
                             <div class="form-group">
                                 <input type="email"
@@ -122,122 +107,156 @@
                                                         data-target="#loginModal"
                                                         href="#loginModal">aquí.</a>
                             </h4>
-                            <button type="submit" class="btn text-center btn_services">Registrarse</button>
+                            <button type="submit" class="btn text-center btn_cita">Registrarse</button>
                         }
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<nav>
-    <label class="logo"> The Car Wash </label>
-    <ul>
-        <li><a href="~/Home">Inicio</a></li>
-        <li><a href="#section2">Servicios</a></li>
-        <li><a href="#">Ubicación</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="#" data-toggle="modal"
-                data-target="#loginModal">Login</a></li>
+@*<nav>
+        <label class="logo"> The Car Wash </label>
+        <ul>
+            <li><a href="~/Home">Inicio</a></li>
+            <li><a href="#section2">Servicios</a></li>
+            <li><a href="#">Ubicación</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#" data-toggle="modal"
+                    data-target="#loginModal">Login</a></li>
 
+        </ul>
+    </nav>*@
+
+<section class="showcase">
+    <header>
+        <h2 class="logo"></h2>
+        <div class="toggle"></div>
+    </header>
+    <video src="~/Content/videos/video1.mp4" muted loop autoplay></video>
+    <div class="overlay"></div>
+    <div class="text">
+        <h2>The Car Wash </h2>
+        <h3>Sin filas, sin espera.</h3>
+        <p>
+            Ahorra y mantén tu auto siempre limpio con nuestros paquetes mensuales o quincenales. Incluimos un servicio semanal directo a la puerta de tu casa u oficina. Sin contratos y puedes cancelar cuando lo decidas. 
+        </p>
+        <a href="#" data-toggle="modal"
+               data-target="#loginModal">Agenda tu cita</a>
+    </div>
+    <ul class="social">
+        <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+        <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+        <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
     </ul>
-</nav>
-<section id="section1" class="landing">
-    <div class="row align-content-center h-100">
-        <div class="col text-center">
-            <img src="~/Content/images/car-wash.png"
-                 class="img-fluid image_landing"
-                 alt="Responsive image" />
+</section>
+<div class="menu">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Destination</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
+
+
+@*<section id="section1" class="landing">
+        <div class="row align-content-center h-100">
+            <div class="col text-center">
+                <img src="~/Content/images/car-wash.png"
+                     class="img-fluid image_landing"
+                     alt="Responsive image" />
+            </div>
+            <div class="col text-white">
+                <h1 class="title_landing">The Car Wash</h1>
+                <h1 class="subtitle_landing">Sin filas, sin espera</h1>
+                <button type="button"
+                        class="btn btn_landing"
+                        data-toggle="modal"
+                        data-target="#loginModal">
+                    Agenda tu cita
+                </button>
+            </div>
         </div>
-        <div class="col text-white">
-            <h1 class="title_landing">The Car Wash</h1>
-            <h1 class="subtitle_landing">Sin filas, sin espera</h1>
-            <button type="button"
-                    class="btn btn_landing"
-                    data-toggle="modal"
+    </section>
+    <section id="section2" class="services">
+        <div class="row text-center services_image">
+            <div class="col">
+                <img src="~/Content/images/tire.png" class="services_image" />
+            </div>
+            <div class="col">
+                <img src="~/Content/images/vacuum.png" class="services_image" />
+            </div>
+            <div class="col">
+                <img src="~/Content/images/hand-washing.png" class="services_image" />
+            </div>
+            <div class="col">
+                <img src="~/Content/images/transportation.png" class="services_image" />
+            </div>
+        </div>
+
+        <div class="row text-center align-content-center">
+            <div class="col services_prices">
+                <h1 class="d-inline">
+                    Express
+                    <small class="d-inline price">$100</small>
+                </h1>
+                <h4 class="text-white mt-4">Shampoo</h4>
+                <h4 class="text-white">Cera 3 colores</h4>
+                <h4 class="text-white">Enjuague de chasis</h4>
+                <h4 class="text-white">Armor-all en llantas</h4>
+            </div>
+            <div class="col services_prices">
+                <h1 class="d-inline">
+                    Light
+                    <small class="d-inline price">$130</small>
+                </h1>
+                <h4 class="text-white mt-4">Shampoo</h4>
+                <h4 class="text-white">Cera 3 colores</h4>
+                <h4 class="text-white">Enjuague de chasis</h4>
+                <h4 class="text-white">Armor-all en llantas</h4>
+                <h4 class="text-white">Lavado de tapetes</h4>
+                <h4 class="text-white">Aspirado</h4>
+                <h4 class="text-white">Aroma</h4>
+            </div>
+            <div class="col services_prices">
+                <h1 class="d-inline">
+                    Aqua
+                    <small class="d-inline price">$150</small>
+                </h1>
+                <h4 class="text-white mt-4">Shampoo</h4>
+                <h4 class="text-white">Cera 3 colores</h4>
+                <h4 class="text-white">Enjuague de chasis</h4>
+                <h4 class="text-white">Armor-all en llantas</h4>
+                <h4 class="text-white">Lavado de tapetes</h4>
+                <h4 class="text-white">Aspirado</h4>
+                <h4 class="text-white">Aroma</h4>
+                <h4 class="text-white">Teflón</h4>
+                <h4 class="text-white">Super cera</h4>
+            </div>
+            <div class="col services_prices">
+                <h1 class="d-inline">
+                    Plus
+                    <small class="d-inline price">$250</small>
+                </h1>
+                <h4 class="text-white mt-4">Shampoo</h4>
+                <h4 class="text-white">Cera 3 colores</h4>
+                <h4 class="text-white">Enjuague de chasis</h4>
+                <h4 class="text-white">Armor-all en llantas</h4>
+                <h4 class="text-white">Lavado de tapetes</h4>
+                <h4 class="text-white">Aspirado</h4>
+                <h4 class="text-white">Aroma</h4>
+                <h4 class="text-white">Teflón</h4>
+                <h4 class="text-white">Super cera</h4>
+                <h4 class="text-white">Encerado express</h4>
+            </div>
+        </div>
+        <div class="text-center align-content-center">
+            <button type="button" class="btn btn_services text-center" data-toggle="modal"
                     data-target="#loginModal">
                 Agenda tu cita
             </button>
         </div>
-    </div>
-</section>
-<section id="section2" class="services">
-    <div class="row text-center services_image">
-        <div class="col">
-            <img src="~/Content/images/tire.png" class="services_image" />
-        </div>
-        <div class="col">
-            <img src="~/Content/images/vacuum.png" class="services_image" />
-        </div>
-        <div class="col">
-            <img src="~/Content/images/hand-washing.png" class="services_image" />
-        </div>
-        <div class="col">
-            <img src="~/Content/images/transportation.png" class="services_image" />
-        </div>
-    </div>
-
-    <div class="row text-center align-content-center">
-        <div class="col services_prices">
-            <h1 class="d-inline">
-                Express
-                <small class="d-inline price">$100</small>
-            </h1>
-            <h4 class="text-white mt-4">Shampoo</h4>
-            <h4 class="text-white">Cera 3 colores</h4>
-            <h4 class="text-white">Enjuague de chasis</h4>
-            <h4 class="text-white">Armor-all en llantas</h4>
-        </div>
-        <div class="col services_prices">
-            <h1 class="d-inline">
-                Light
-                <small class="d-inline price">$130</small>
-            </h1>
-            <h4 class="text-white mt-4">Shampoo</h4>
-            <h4 class="text-white">Cera 3 colores</h4>
-            <h4 class="text-white">Enjuague de chasis</h4>
-            <h4 class="text-white">Armor-all en llantas</h4>
-            <h4 class="text-white">Lavado de tapetes</h4>
-            <h4 class="text-white">Aspirado</h4>
-            <h4 class="text-white">Aroma</h4>
-        </div>
-        <div class="col services_prices">
-            <h1 class="d-inline">
-                Aqua
-                <small class="d-inline price">$150</small>
-            </h1>
-            <h4 class="text-white mt-4">Shampoo</h4>
-            <h4 class="text-white">Cera 3 colores</h4>
-            <h4 class="text-white">Enjuague de chasis</h4>
-            <h4 class="text-white">Armor-all en llantas</h4>
-            <h4 class="text-white">Lavado de tapetes</h4>
-            <h4 class="text-white">Aspirado</h4>
-            <h4 class="text-white">Aroma</h4>
-            <h4 class="text-white">Teflón</h4>
-            <h4 class="text-white">Super cera</h4>
-        </div>
-        <div class="col services_prices">
-            <h1 class="d-inline">
-                Plus
-                <small class="d-inline price">$250</small>
-            </h1>
-            <h4 class="text-white mt-4">Shampoo</h4>
-            <h4 class="text-white">Cera 3 colores</h4>
-            <h4 class="text-white">Enjuague de chasis</h4>
-            <h4 class="text-white">Armor-all en llantas</h4>
-            <h4 class="text-white">Lavado de tapetes</h4>
-            <h4 class="text-white">Aspirado</h4>
-            <h4 class="text-white">Aroma</h4>
-            <h4 class="text-white">Teflón</h4>
-            <h4 class="text-white">Super cera</h4>
-            <h4 class="text-white">Encerado express</h4>
-        </div>
-    </div>
-    <div class="text-center align-content-center">
-        <button type="button" class="btn btn_services text-center" data-toggle="modal"
-                data-target="#loginModal">
-            Agenda tu cita
-        </button>
-    </div>
-</section>
+    </section>*@

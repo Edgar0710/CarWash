@@ -323,6 +323,7 @@
     <Content Include="Content\vendors\moment\locale\es.js" />
     <Content Include="Content\vendors\moment\moment.min.js" />
     <Content Include="Content\vendors\sweetalert2\sweetalert2.all.min.js" />
+    <Content Include="Content\videos\video1.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -511,6 +512,7 @@
     <Folder Include="Areas\Api\Data\" />
     <Folder Include="Areas\Api\Views\Services\" />
     <Folder Include="Areas\Api\Views\Shared\" />
+    <Folder Include="Content\js\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Services\" />
   </ItemGroup>
